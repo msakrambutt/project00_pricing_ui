@@ -15,14 +15,14 @@ export const Listitem = (props: StackProps) => {
 
 export default function Pricing() {
     return (
-        <Box mx='6' as='section'>
+        <Box mx='3' as='section'>
     <Box 
         display='flex'
         flexDirection={['column', 'column', 'row']}
         maxW='994px'
         margin='auto'
         mt='-160px'
-        bg="white"
+        // bg="white"
         borderRadius='12px'
         overflow='hidden'
         boxShadow='0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04)'
@@ -39,13 +39,8 @@ export default function Pricing() {
        
     
         <Box
-            // maxW="994px" height={['425px','350px','300px']}
-            // p='60px' fontSize="16px" bg="white" >
-            mx={["20px", "40px", "50px", "60px"]}
-                fontWeight="semibold"
-                fontSize={["14px", "14px", "16px", "18px"]}
-                >
-
+            maxW="994px" height={['425px','350px','300px']}
+            p='60px' fontSize="16px" bg="white" >
             <Text pt="3" >
                 Access these features when you get this pricing package for your business.
             </Text>
