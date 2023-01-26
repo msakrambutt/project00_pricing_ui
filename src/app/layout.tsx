@@ -1,5 +1,6 @@
 
-import ChakraWrapper from "@/components/chakraWrapper"
+import React from 'react';
+import ChakraWrapper from '@/components/chakraWrapper';
 export default function RootLayout({
   children,
 }: {

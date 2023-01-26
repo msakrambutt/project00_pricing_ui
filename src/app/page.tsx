@@ -1,4 +1,4 @@
-// import Todo from './../components/todo';
+"use client";
 import Header from './../components/header';
 import Pricing from '@/components/Pricing';
 import Feature from '@/components/Features';

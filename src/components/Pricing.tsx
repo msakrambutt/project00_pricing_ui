@@ -1,97 +1,63 @@
-"use client";
-import {
-    Box,
-    Flex,
-    Text,
-    Heading,
-    Button,
-    HStack,
-    Icon,
-    Stack,
-    background,
-    StackProps,
-    VStack,
-  } from "@chakra-ui/react";
-  import Checkicon from "@/icons/Icon";
-  
-  export const ListItem = (props: StackProps) => {
+import { Box, Icon, Flex, Text, Heading, Button, HStack, StackProps, Stack } from "@chakra-ui/react"
+
+import React from 'react'
+import CheckIcon from "@/icons/Icon";
+
+export const Listitem = (props: StackProps) => {
     const { children, ...rest } = props;
     return (
-      <HStack as="li" spacing="12px" {...rest} alignItems="start">
-        <Icon as={Checkicon} boxSize="20px" />
-        <Text h="50px">{children}</Text>
-      </HStack>
-    );
-  };
-  
-  export default function Pricing() {
-    return (
-      <div>
-        <Box mx='6'>
-          <Box mx="auto" mt="-256px" overflow="hidden">
-            <Flex
-              direction={["column", "column", "column", "row"]}
-              mx="auto"
-              bg="white"
-              borderRadius="12px"
+        <HStack as='li' spacing='20px' {...rest}>
+            <Icon as={CheckIcon} w='22px' h='22px' />
+            <text>{children}</text>
+        </HStack>
+    )
+}
 
-              boxShadow="dark-lg"
-              // box-Shadow="dark-lg,0px 10px 10px -5px rgba(0,0,0,0.1),0px 20px 25px -5px rgba(0,0,0,0.4)"
-            maxW="70%">
-              <Box
-                textAlign="center"
-                borderRadius="12px"
-                backgroundColor="#F0EAFB"
-                padding="60px"
-              >
-                <VStack mt="17">
-                  <Text
-                    fontWeight="800"
-                    fontSize={["18px", "18px", "20px", "24px"]}
-                    line-height="32px"
-                  > Premium PRO</Text>
-  
-                  <Text fontWeight="500" fontSize="18px" lineHeight="38px">
-                    billed just once
-                  </Text>
-                  <Heading as='h3' fontSize={['5xl','5xl','6xl']} mt='16px'>$329</Heading>
-                  <Button
-                    background="#805AD5"
-                    width={["150px", "180px", "180px", "280px"]}
-                    height="51px"
-                    border-borderRadius="8px"
-                    mt="24px"
-                  >
-                    Get Started
-                  </Button>
-                </VStack>
-              </Box>
-              <Box
-                mx={["20px", "40px", "50px", "60px"]}
+export default function Pricing() {
+    return (
+        <Box mx='6' as='section'>
+    <Box 
+        display='flex'
+        flexDirection={['column', 'column', 'row']}
+        maxW='994px'
+        margin='auto'
+        mt='-160px'
+        bg="white"
+        borderRadius='12px'
+        overflow='hidden'
+        boxShadow='0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04)'
+    >
+       
+            <Flex >
+                <Box bgColor="#F0EAFB" p="60px">
+                    <Text fontWeight="bold" fontSize={["18px", "18px", "20px", "24px"]}>Premium PRO</Text>
+                    <Heading as="h3" fontSize={['5xl','5xl','6xl']} mt="16px">$329</Heading>
+                    <Text fontWeight="500px" fontSize="18px" mt="8px">billed just once</Text>
+                    <Button color="white" colorScheme="purple" border-borderRadius="8px" size="lg" width={["180px" ,"180px", "280px"]} mt="24px"> Get Started</Button>
+                </Box>
+            </Flex>
+       
+    
+        <Box
+            // maxW="994px" height={['425px','350px','300px']}
+            // p='60px' fontSize="16px" bg="white" >
+            mx={["20px", "40px", "50px", "60px"]}
                 fontWeight="semibold"
                 fontSize={["14px", "14px", "16px", "18px"]}
-                bg="white"
-              >
-                <Text textAlign="left" pt="3">
-                  Access these features when you get this pricing package for your
-                  business.
-                </Text>
-                <Stack
-                  as="ul"
-                  spacing="20px"
-                  pt="24px"
-                  fontSize={["12px", "16px", "18px", "20px"]}
                 >
-                  <ListItem>International calling and API</ListItem>
-                  <ListItem>Additional phone numbers</ListItem>
-                  <ListItem>Automated messages Zapier</ListItem>
-                  <ListItem>24/7 support and consulting</ListItem>
-                </Stack>
-              </Box>
-            </Flex>
-          </Box>
+
+            <Text pt="3" >
+                Access these features when you get this pricing package for your business.
+            </Text>
+            <Stack as="ul" spacing='20px' pt='24px'>
+                <Listitem>International calling and messaging API</Listitem>
+                <Listitem>Additional phone numbers</Listitem>
+                <Listitem>Automated messages via Zapier</Listitem>
+                <Listitem>24/7 support and consulting</Listitem>
+            </Stack>
         </Box>
-      </div>
-    );
-  }
-  
+    </Box>
+    </Box>
+     )
+
+    }

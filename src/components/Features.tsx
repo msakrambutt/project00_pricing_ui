@@ -1,30 +1,42 @@
-"use client";
-import React, { ElementType } from "react";
-import {Flex, Box,HStack,VStack,Icon,Text,StackProps, Stack } from "@chakra-ui/react";
-import { HasselFreeIcon, MoneyBackGuaranteeIcon, MoneySubscriptionIcon } from "@/icons/Icon";
-interface FeatureProps extends StackProps{
-    icon:ElementType;
+import { Box, HStack, Icon, Stack, StackProps, Text } from '@chakra-ui/react';
+import {
+  HassleFreeIcon,
+  MoneyBackGuaranteeIcon,
+  MonthlySubscriptionIcon,
+} from '@/icons/Icon';
+
+interface FeatureProps extends StackProps {
+  icon: React.ElementType;
 }
-export function Feature(props:FeatureProps){
-    const {icon,children,...rest}=props;
-    return(
-        <Stack {...rest} spacing='24px' direction='row'>
-        <Icon as={icon} boxsize={['2xl','2xl','3xl']}></Icon>
-        <Text textAlign='left' fontSize={["1xl","1xl","1.5xl"]} fontWeight='700'>
-            {children}
-        </Text>
-        </Stack>
-        
-    );
+
+function Feature(props: FeatureProps) {
+  const { icon, children, ...rest } = props;
+  return (
+    <HStack {...rest} spacing='6' align='start'>
+      <Icon as={icon} boxSize={['8', '8', '12']} />
+      <Text textAlign='left' fontSize='lg' fontWeight='bold'>
+        {children}
+      </Text>
+    </HStack>
+  );
 }
-export default function Features(){
-    return(
-        <Box maxW='1024px' m='auto' pt='60px' pb='32px'>
-        <Stack  spacing='24px' px='60px'  direction={['column','column','column','row']}>
-            <Feature icon={MoneyBackGuaranteeIcon}>30 days money back Guarantee</Feature>
-            <Feature icon={HasselFreeIcon}>No setup fees 100% hassle-free</Feature>
-            <Feature icon={MoneySubscriptionIcon}>No monthly subscription Pay once and for all</Feature>
-        </Stack>
-        </Box>
-    );
+
+export default function Features() {
+  return (
+    <Box maxW='1024px' m='auto' pt='60px' pb='8' as='section'>
+      <Stack
+        px='12'
+        direction={['column', 'column', 'row']}
+        spacing={['6', '6', '5']}
+      >
+        <Feature icon={MoneyBackGuaranteeIcon}>
+          30 days money back Guarantee
+        </Feature>
+        <Feature icon={HassleFreeIcon}>No setup fees 100% hassle-free</Feature>
+        <Feature icon={MonthlySubscriptionIcon}>
+          No monthly subscription Pay once and for all
+        </Feature>
+      </Stack>
+    </Box>
+  );
 }
