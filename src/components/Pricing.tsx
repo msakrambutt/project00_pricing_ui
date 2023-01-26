@@ -15,25 +15,24 @@ export const Listitem = (props: StackProps) => {
 
 export default function Pricing() {
     return (
-        <Box mx='3' as='section'>
+        <Box mx='2' as='section'>
     <Box 
         display='flex'
         flexDirection={['column', 'column', 'row']}
         maxW='994px'
         margin='auto'
         mt='-160px'
-        // bg="white"
         borderRadius='12px'
         overflow='hidden'
         boxShadow='0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04)'
     >
        
             <Flex >
-                <Box bgColor="#F0EAFB" p="60px">
+                <Box bgColor="#F0EAFB" p="60px" textAlign="left">
                     <Text fontWeight="bold" fontSize={["18px", "18px", "20px", "24px"]}>Premium PRO</Text>
                     <Heading as="h3" fontSize={['5xl','5xl','6xl']} mt="16px">$329</Heading>
                     <Text fontWeight="500px" fontSize="18px" mt="8px">billed just once</Text>
-                    <Button color="white" colorScheme="purple" border-borderRadius="8px" size="lg" width={["180px" ,"180px", "280px"]} mt="24px"> Get Started</Button>
+                    <Button color="white" colorScheme="purple" borderRadius="8px" size="lg" width="230px" mt="24px"> Get Started</Button>
                 </Box>
             </Flex>
        
